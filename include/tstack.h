@@ -2,15 +2,15 @@
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 
-template<typename T, int size>
+template<typename T, int size = 0>
 class TStack {
  private:
-    T arr*;
+    T arr[size] = {0};
     int top;
  public:
-    TStack(): {
+    TStack() {
         top = -1;
-        arr = new T[size];
+
     }
     void Push(const T& value) {
         if (!isFull()) {
