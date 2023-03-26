@@ -32,7 +32,7 @@ std::string infx2pstfx(std::string inf) {
             st1.Push(a);
             flag = 0;
         }
-        if (Preor(a) > Preor(st1.get())){
+        if (Preor(a) > Preor(st1.get())) {
             st1.Push(a);
             flag = 0;
         }
@@ -57,7 +57,7 @@ std::string infx2pstfx(std::string inf) {
         if (k == inf.size() - 1) {
             while (!st1.isEmpty()) {
                 res += st1.pop();
-                if(st1.GetTop() != -1)
+                if (st1.GetTop() != -1)
                     res += ' ';
             }
         }
@@ -68,7 +68,7 @@ std::string infx2pstfx(std::string inf) {
 
 int eval(std::string pref) {
     TStack<int, 100> st2;
-    for (char a : post) {
+    for (char a : pref) {
         if (a == ' ') {
             continue;
         }
