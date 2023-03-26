@@ -5,10 +5,13 @@
 template<typename T, int size>
 class TStack {
  private:
-    T arr* = new T [size];
+    T arr*;
     int top;
  public:
-    TStack(): top(-1) {}
+    TStack(): {
+        top = -1;
+        arr = new T[size];
+    }
     void Push(const T& value) {
         if (!isFull()) {
             arr[++top] = value;
@@ -26,9 +29,6 @@ class TStack {
     }
     bool isFull() const {
         return top == size;
-    }
-    ~TStack() {
-        delete[] arr;
     }
 };
 
