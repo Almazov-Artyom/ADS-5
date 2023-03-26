@@ -2,27 +2,23 @@
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 
-template<typename T, int size>
+template<typename T, const int size>
 class TStack {
-private:
+ private:
     T arr[size];
     int top;
-public:
-    TStack(): top(-1){}
-    void Push(T& value) {
+ public:
+    TStack(): top(-1) {}
+    void Push(const T& value) {
         if (!isFull()) {
             arr[++top] = value;
         }
     }
     T get() const {
-        if (!isEmpty()) {
-            return arr[top];
-        }
+        return arr[top];
     }
     T pop() {
-        if (!isEmpty()) {
-            return arr[top--];
-        }
+        return arr[top--];
     }
     int GetTop() const { return top; }
     bool isEmpty() const {
